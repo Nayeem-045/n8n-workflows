@@ -1,0 +1,74 @@
+{
+  "name": "Automated Email Reminder Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 23
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cb0aa3c6-2535-4b16-b6c3-e31ba1b33d0d",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "sendTo": "mdnayeemoddin921@gmail.com",
+        "subject": "Remainder!!..",
+        "message": "Hey Nayeem, Time to sleep....",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "9922ba8f-472e-4819-842c-80798cdfb424",
+      "name": "Send a message",
+      "webhookId": "6093415c-4f27-42b7-82ac-b04c65048bf6",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "phuECdVFPu25fplz",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "77e1536b-3106-4b9f-b68a-36023a1189bb",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c6ca87a40cdbebce91287b0ceff946cbd4b36eb14e30543128a6c821e7adbc62"
+  },
+  "id": "sJ3bR6UUYFKyxJ3M",
+  "tags": []
+}
